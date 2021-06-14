@@ -2,6 +2,7 @@ import { configureStore, getDefaultMiddleware, combineReducers } from "@reduxjs/
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import userReducer from "./user-slice";
+import filmReducer from "./film-slice";
 
 const persistConfig = {
   key: "root",
@@ -10,6 +11,7 @@ const persistConfig = {
 };
 const rootReducer = combineReducers({
   user: userReducer,
+  film: filmReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

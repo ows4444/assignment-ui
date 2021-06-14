@@ -22,7 +22,6 @@ export const FetchProfile = createAsyncThunk(`${namespace}/FetchProfile`, async 
     type: "get",
   });
 
-  console.log(data);
   return data;
 });
 
@@ -36,7 +35,6 @@ export const userSlice = createSlice({
   reducers: {},
   extraReducers: {
     [FetchLogin.pending](state) {
-      console.log("::::::L", FetchLogin.pending);
       state.loading = HTTP_STATUS.PENDING;
     },
     [FetchLogin.rejected](state) {
@@ -49,7 +47,6 @@ export const userSlice = createSlice({
     },
 
     [FetchProfile.pending](state) {
-      console.log("::::::P",FetchProfile.pending);
       state.loading = HTTP_STATUS.PENDING;
     },
     [FetchLogin.fulfilled](state, { payload }) {
